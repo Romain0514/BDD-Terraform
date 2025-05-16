@@ -13,8 +13,8 @@ CREATE USER IF NOT EXISTS 'tech'@'%' IDENTIFIED BY 'tech';
 GRANT SELECT ON webdb.Site_Web TO 'tech'@'%';
 
 -- Création de l'utilisateur Admin (droits root)
-CREATE USER IF NOT EXISTS 'Admin'@'localhost' IDENTIFIED BY 'Admin';
-GRANT ALL PRIVILEGES ON *.* TO 'Admin'@'localhost' WITH GRANT OPTION;
+CREATE USER IF NOT EXISTS '{{db_user}}'@'%' IDENTIFIED BY '{{db_password}}';
+GRANT ALL PRIVILEGES ON *.* TO '{{db_user}}'@'%' WITH GRANT OPTION;
 
 -- Appliquer les changements
 FLUSH PRIVILEGES;
